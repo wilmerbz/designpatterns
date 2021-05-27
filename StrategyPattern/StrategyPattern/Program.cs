@@ -11,13 +11,22 @@ namespace StrategyPattern
         {
 
             var weapons = new List<IWeapon>() {
-                new Knife(),
                 new Gun(),
                 new MachineGun(),
-                new GranadeLauncher()
+                new GranadeLauncher(),
+                new Knife()
             };
 
-            var character = new Character();
+            
+            
+            Character character = null;
+
+            // Livskov principle
+            character = new Knight();
+            //character = new Troll();
+
+            //Depend on abstractions, not concrete implementations.
+            //Interchangeable algorithms.
 
             foreach (IWeapon weapon in weapons)
             {
