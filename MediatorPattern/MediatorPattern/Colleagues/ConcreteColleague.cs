@@ -30,6 +30,7 @@ namespace MediatorPattern.Colleagues
 
         public void SendMessage(string type, string content)
         {
+            Console.WriteLine($"[{Name}] - Sending message: {type} - {content}");
             Mediator.SendMessage(this, type, content);
         }
 

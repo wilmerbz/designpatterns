@@ -34,7 +34,10 @@ namespace MediatorPattern.Mediator
         {
             foreach (IColleague colleague in Colleagues)
             {
-                if (colleague == sender) continue;
+                if (colleague == sender)
+                {
+                    continue;
+                }
 
                 colleague.ReceiveMessage(type, content);
             }
