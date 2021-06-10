@@ -39,7 +39,7 @@ namespace MediatorPattern.Colleagues
             Console.WriteLine($"[{Name}] - Sending message: {messagType} - {content} -->>");
             Console.WriteLine();
 
-            Mediator.SendMessage(this, messagType, content);
+            Mediator?.SendMessage(this, messagType, content);
         }
 
     }

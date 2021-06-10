@@ -11,29 +11,34 @@ namespace MediatorPattern
         {
 
             IMediator mediator = new MessageMediator();
+            //IMediator mediator2 = new MessageMediator();
+
             List<IColleague> colleagues = new List<IColleague>();
 
             int numberOfColleagues = 3;
-            List<IColleague> concreteColleaguesA = CreateGossipConcreteColleaguesA(mediator, numberOfColleagues);
+            List<IColleague> concreteColleaguesGossip = CreateGossipConcreteColleaguesA(mediator, numberOfColleagues);
             
             int numberOfVerySeriousCollegues = 2;
-            List<IColleague> concreteColleaguesB = CreateVerySeriousConcreteColleaguesB(mediator, numberOfVerySeriousCollegues);
+            List<IColleague> concreteColleaguesVerySerious = CreateVerySeriousConcreteColleaguesB(mediator, numberOfVerySeriousCollegues);
 
-            colleagues.AddRange(concreteColleaguesA);
-            colleagues.AddRange(concreteColleaguesB);
+            colleagues.AddRange(concreteColleaguesGossip);
+            colleagues.AddRange(concreteColleaguesVerySerious);
 
             var random = new Random();
             
 
             while (true)
             {
-                var senderIndex = random.Next(0, concreteColleaguesA.Count);
+                var senderIndex = random.Next(0, concreteColleaguesGossip.Count);
 
-                var currentColleague = concreteColleaguesA[senderIndex] as GossipConcreteColleagueA;
+                var currentColleague = concreteColleaguesGossip[senderIndex] as GossipConcreteColleagueA;
 
                 currentColleague.DoSomething();
 
                 Console.WriteLine();
+
+                //concreteColleaguesGossip = CreateGossipConcreteColleaguesA(mediator, numberOfColleagues);
+                //colleagues.AddRange(concreteColleaguesGossip);
 
             }
         }

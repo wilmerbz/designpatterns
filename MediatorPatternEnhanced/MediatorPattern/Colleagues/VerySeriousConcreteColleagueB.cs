@@ -17,13 +17,13 @@ namespace MediatorPattern.Colleagues
             Name = name;
         }
 
-
         public void ReceiveMessage(string type, string content)
         {
             switch (type)
             {
                 case "Important":
                     Console.WriteLine($"[{Name}] - It is {type} - {content}.");
+
                     break;
                 default:
                     Console.WriteLine($"[{Name}] - I don't care.");
@@ -35,12 +35,6 @@ namespace MediatorPattern.Colleagues
         public void SetMediator(IMediator mediator)
         {
             Mediator = mediator;
-        }
-
-        public void SendMessage(string type, string content)
-        {
-            Console.WriteLine($"[{Name}] - Sending message: {type} - {content}");
-            Mediator.SendMessage(this, type, content);
         }
 
     }
