@@ -27,7 +27,7 @@ namespace MediatorPattern
 
             while (true)
             {
-                var senderIndex = random.Next(0, colleagues.Count);
+                var senderIndex = random.Next(0, concreteColleaguesA.Count);
 
                 var currentColleague = concreteColleaguesA[senderIndex] as GossipConcreteColleagueA;
 

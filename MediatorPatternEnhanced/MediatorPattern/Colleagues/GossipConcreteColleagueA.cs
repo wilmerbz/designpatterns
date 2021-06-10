@@ -36,7 +36,8 @@ namespace MediatorPattern.Colleagues
             Console.WriteLine("Message Content:");
             var content = Console.ReadLine();
 
-            Console.WriteLine($"[{Name}] - Sending message: {messagType} - {content}");
+            Console.WriteLine($"[{Name}] - Sending message: {messagType} - {content} -->>");
+            Console.WriteLine();
 
             Mediator.SendMessage(this, messagType, content);
         }
