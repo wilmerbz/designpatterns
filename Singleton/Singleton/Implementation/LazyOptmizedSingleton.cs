@@ -17,7 +17,8 @@ namespace Singleton.Implementation
         /// <summary>
         /// Singleton instance.
         /// </summary>
-        private static Lazy<LazyOptmizedSingleton> _instance = new Lazy<LazyOptmizedSingleton>(()=> new LazyOptmizedSingleton());
+        private static Lazy<LazyOptmizedSingleton> _instance = 
+            new Lazy<LazyOptmizedSingleton>(()=> new LazyOptmizedSingleton());
 
 
         /// <summary>

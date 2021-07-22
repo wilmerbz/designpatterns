@@ -28,6 +28,7 @@ namespace Singleton.Implementation
         {
             get
             {
+
                 if (_instance == null)
                 {
                     lock (_lock)

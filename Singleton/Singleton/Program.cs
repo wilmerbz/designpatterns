@@ -55,6 +55,7 @@ namespace Singleton
                 var thread = new Thread(() => {
 
                     BasicSingleton.Instance.DoSomething(threadIndex);
+
                 });
 
                 thread.Start();
